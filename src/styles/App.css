@@ -1,0 +1,662 @@
+/* --- Global Styles and Variables --- */
+:root {
+    --color-primary: #192754; /* Dark Blue */
+    --color-secondary: #DC3545; /* Red (Accent/Buttons) */
+    --color-success: #28a745; /* Green (Status) */
+    --color-light: #f8f9fa; /* Light Gray */
+    --color-white: #ffffff;
+    --color-text: #333;
+    --mobile-width: 450px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-light);
+    color: var(--color-text);
+    overflow-x: hidden; /* Fixes mobile horizontal scrolling */
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.card {
+    background-color: var(--color-white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* --- Auth Header Styles (Sign Up/In) --- */
+.auth-header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 20px 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-header .sba-logo {
+    width: 60px; 
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.auth-header .logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.branding-text {
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.security-message {
+    font-size: 0.8em;
+    padding: 0 10px;
+    opacity: 0.8;
+}
+
+/* --- Form Styles (SignUp & SignIn) --- */
+.signup-page, .signin-page {
+    max-width: var(--mobile-width);
+    margin: 0 auto;
+    padding: 0 15px 50px 15px;
+}
+
+.signup-form, .signin-form {
+    padding: 20px;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2, .signin-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.purpose-label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.char-count {
+    text-align: right;
+    font-size: 0.75em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.terms-checkbox input {
+    width: auto;
+    margin-right: 8px;
+}
+
+.register-button, .login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover, .login-button:hover {
+    background-color: #c82333;
+}
+
+.error-text {
+    color: var(--color-secondary);
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.signin-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+/* --- Loading Spinner --- */
+.loading-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.loading-content {
+    padding: 20px;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--color-primary);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* --- USER DASHBOARD (MODERN) STYLES --- */
+
+.dashboard-page-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-dashboard-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem; /* Default mobile padding */
+    min-height: auto; /* <-- ENSURE IT'S 'auto' */
+    background-color: #f9fafb; /* bg-gray-50 */
+}
+
+/* 1. CONSOLIDATED HEADER FIX */
+.user-dashboard-main header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap; /* Prevents wrapping/overlap */
+    min-width: 0; 
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* 2. Logo Section */
+.user-dashboard-main header .logo-section {
+    display: flex;
+    align-items: center;
+    flex-shrink: 1; /* Allows shrinking */
+    min-width: 0; 
+}
+
+.user-dashboard-main header .sba-logo {
+    height: 2rem; /* h-8 */
+    width: auto;
+    margin-right: 0.5rem; /* Space before branding text */
+    margin-bottom: 0; /* Override old rule */
+}
+
+.user-dashboard-main header .branding-text {
+    font-size: 1em;
+    font-weight: 700;
+    color: #374151; /* text-gray-700 */
+    white-space: nowrap;
+}
+
+/* Sign Out Button Style */
+.user-dashboard-main header button {
+    display: flex;
+    align-items: center;
+    color: #ef4444; /* text-red-500 */
+    font-weight: 500;
+    transition: color 0.15s;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.user-dashboard-main header button:hover {
+    color: #b91c1c; /* hover:text-red-700 */
+}
+
+/* Welcome Message */
+.user-dashboard-main h2 {
+    font-size: 1.5rem; /* Mobile size */
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+/* --- Cards Grid Layout --- */
+.grid {
+    display: grid;
+    gap: 1rem; /* Mobile gap */
+    margin-bottom: 2rem;
+    grid-template-columns: 1fr; /* Default to single column */
+}
+
+/* --- Card Styling --- */
+
+.bg-white { background-color: white; }
+.rounded-xl { border-radius: 0.75rem; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.p-6 { padding: 1.5rem; }
+.p-4 { padding: 1rem; }
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.mr-4 { margin-right: 1rem; }
+
+.text-sm { font-size: 0.875rem; }
+.text-3xl { font-size: 1.5rem; /* Mobile balance size */ }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-medium { font-weight: 500; }
+
+.text-gray-900 { color: #111827; }
+.text-gray-500 { color: #6b7280; }
+.text-gray-700 { color: #374151; }
+
+/* Separators */
+.border-b { border-bottom: 1px solid currentColor; }
+.pb-2 { padding-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mt-1 { margin-top: 0.25rem; }
+
+/* Balance Card Specific */
+.border-l-4 { border-left-width: 4px; }
+.border-green-500 { border-color: #10b981; }
+.text-green-500 { color: #10b981; }
+
+/* Status Card Specific (Processing) */
+.border-yellow-500 { border-color: #f59e0b; }
+.bg-yellow-100 { background-color: #fef3c7; }
+.text-yellow-800 { color: #92400e; }
+.border { border-width: 1px; }
+
+/* --- Withdrawal Section --- */
+
+.bg-blue-600 { background-color: #2563eb; }
+.hover\:bg-blue-700:hover { background-color: #1d4ed8; }
+.text-white { color: white; }
+.py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.w-full { width: 100%; }
+.transition { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+.disabled\:opacity-50:disabled { opacity: 0.5; cursor: not-allowed; }
+.text-xs { font-size: 0.75rem; }
+.mt-2 { margin-top: 0.5rem; }
+.text-center { text-align: center; }
+
+/* --- Details Section --- */
+.list-disc { list-style-type: disc; }
+.pl-5 { padding-left: 1.25rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+
+
+/* --- MODAL STYLES --- */
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.modal-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.text-red-700 { color: #b91c1c; }
+.text-red-800 { color: #991b1b; }
+.bg-red-50 { background-color: #fef2f2; }
+.border-red-300 { border-color: #fca5a5; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Notification Bell --- */
+.notification-container {
+    position: relative;
+    display: inline-block;
+}
+
+.notification-bell {
+    background: none;
+    border: none;
+    color: #374151; /* Dark icon color for the light dashboard background */
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+}
+
+.notification-bell:hover {
+    color: #111827;
+}
+
+.notification-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-radius: 50%;
+    padding: 1px 5px;
+    font-size: 0.7em;
+    line-height: 1;
+}
+
+.notification-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-white);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 500;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: var(--color-text);
+    font-size: 0.9em;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.no-notes {
+    text-align: center;
+    color: #888;
+}
+
+
+/* --- FOOTER STYLES --- */
+.app-footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 15px;
+    text-align: center;
+    border-radius: 0; /* Full width footer */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width: 30px; 
+    height: auto;
+}
+
+.footer-contact p {
+    font-size: 0.7em;
+    margin: 3px 0;
+}
+
+.footer-contact a {
+    color: var(--color-light);
+}
+
+.footer-social a {
+    margin: 0 5px;
+    color: var(--color-white);
+}
+
+/* --- ADMIN DASHBOARD STYLES (Cleaned) --- */
+.admin-dashboard-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: var(--color-light); 
+}
+
+.admin-dashboard-page header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.admin-dashboard-page h1 {
+    color: var(--color-white); 
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.admin-content h2 {
+    color: var(--color-primary);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 5px;
+}
+
+.config-card {
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.config-card h2 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.config-card textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.update-button {
+    background-color: #ffc107; /* Yellow */
+    color: var(--color-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.users-table-container {
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th, .users-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.users-table th {
+    background-color: #f8f8f8;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.action-button {
+    background-color: var(--color-secondary); 
+    color: var(--color-white);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover:not(:disabled) {
+    background-color: #c82333;
+}
+.action-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.refresh-button {
+    padding: 8px 15px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* --- MOBILE RESPONSIVENESS (BREAKPOINTS) --- */
+
+@media (min-width: 768px) {
+    /* Desktop/Tablet Styles */
+
+    .signup-form, .signin-form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .form-row {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .form-row > * {
+        flex: 1;
+    }
+    
+    .user-dashboard-main {
+        padding: 1.5rem; 
+    }
+    
+    .user-dashboard-main h2 {
+        font-size: 2rem;
+    }
+    
+    .grid {
+        gap: 1.5rem;
+    }
+    
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .user-dashboard-main .text-3xl {
+        font-size: 1.875rem; /* Restore larger balance text */
+    }
+    
+    .user-dashboard-main .border-l-4 .w-8 {
+        width: 2rem; /* Restore larger icon size */
+        height: 2rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    /* Extra Small Screen Fixes (Mobile) */
+
+    /* Critical Fix: Hide branding text and Sign Out text */
+    .user-dashboard-main header .branding-text,
+    .user-dashboard-main header button span {
+        display: none !important;
+    }
+    
+    /* Ensure only icons are visible in header actions */
+    .user-dashboard-main header button {
+        padding: 0 5px;
+    }
+}
+
