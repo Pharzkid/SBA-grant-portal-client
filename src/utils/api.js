@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Set the base URL for the backend API
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Assumes your backend runs on port 5000
+  baseURL: 'https://sba-grant-portal-server.onrender.com/api', // Assumes your backend runs on port 5000
 });
 
 // Intercept requests to attach the token for authenticated routes

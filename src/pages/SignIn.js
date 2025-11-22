@@ -5,7 +5,8 @@ import axios from 'axios';
 import api from '../utils/api'; // Assuming you have an api utility file already
 
 // The base URL for authentication API calls
-const API_BASE_URL = `${process.env.REACT_APP_API_URL}/api/auth`;
+const API_BASE_URL = 'https://sba-grant-portal-server.onrender.com/api/auth';
+
 
 const SignIn = () => {
     const navigate = useNavigate();

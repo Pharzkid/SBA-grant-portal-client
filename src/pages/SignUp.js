@@ -5,7 +5,8 @@ import Footer from '../components/common/Footer';
 import axios from 'axios';
 
 // Placeholder for API URL - needs to be updated when backend is defined
-const API_BASE_URL = `${process.env.REACT_APP_API_URL}/api/auth`;
+const API_BASE_URL = 'https://sba-grant-portal-server.onrender.com/api/auth';
+
 
 const SignUp = () => {
   const navigate = useNavigate();
