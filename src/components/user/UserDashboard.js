@@ -137,7 +137,7 @@ const UserDashboard = ({ userData, withdrawalMessage, onSignOut }) => {
                 </section>
             </div>
 
-            {/* --- The Modal Component --- */}
+            {/* --- TheModal Component --- */}
             <WithdrawalModal
                 show={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
