@@ -1,10 +1,11 @@
 import React from 'react';
-import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaInstagram} from 'react-icons/fa';
+import { FaXTwitter} from 'react-icons/fa6'
 
 const Footer = () => {
     // Links provided by the user
-    const facebookLink = "https://www.facebook.com/share/1DFCkVqQCJ/?mibextid=wwXIfr";
-    const instagramLink = "https://www.instagram.com/itzmevirdi?igsh=ZnRxYml2cjl3MTcy";
+    const xLink = "https://x.com/sbagrantportal?s=21";
+    const instagramLink = "https://www.instagram.com/sbagrantportal?igsh=ZnRxYml2cjl3MTcy";
     const contactNumber = "+1-618-701-2773";
 
     return (
@@ -17,12 +18,12 @@ const Footer = () => {
 
                 <div className="footer-contact">
                     <p>Questions? We're here to help.</p>
-                    <p>Call us at: <a href={`tel:${contactNumber}`}>{contactNumber}</a></p>
+                    <p>Text us at: <a href={`tel:${contactNumber}`}>{contactNumber}</a></p>
                 </div>
 
                 <div className="footer-social">
-                    <a href={facebookLink} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                        <FaFacebook size={24} className="social-icon" />
+                    <a href={xLink} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <FaXTwitter size={24} className="social-icon" />
                     </a>
                     <a href={instagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <FaInstagram size={24} className="social-icon" />
